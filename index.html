@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <title>Meme Generator</title>
+</head>
+
+<body>
+    <h1> Meme Generator</h1>
+    <div class="maincontainer">
+        <div class="forms">
+            <div class="input-field">
+                <p>Image URL</p>
+            </div>
+            <input type="text" id="urlInput" class="input-box" placeholder="Enter the Image URL">
+            <div class="input-image">
+                <p>or Upload Image</p>
+            </div>
+            <img src="delete-img.png" id="deletebutton" class="delete" onclick="deletefile()">
+            <input type="file" id="imageInput" class="image-upload"> <br>
+
+            <div class="input-field">
+                <p>Top Text</p>
+            </div>
+            <input type="text" id="toptext" required class="input-box" placeholder="Enter the Top Text"> <br>
+            <input type="color" id="toptext-color" required class="color-picker"> <br>
+            <div class="input-field">
+                <p>Bottom Text</p>
+            </div>
+            <input type="text" id="bottomtext" required class="input-box" placeholder="Enter the Bottom Text"> <br>
+            <input type="color" id="bottomtext-color" required class="color-picker"> <br>
+            <div class="input-field">
+                <p>Font Size</p>
+                <select class="dropbox">
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16" selected>16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                    <option value="24">24</option>
+                    <option value="26">26</option>
+                    <option value="28">28</option>
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                </select>
+            </div>
+            <input type="button" value="Generate" class="generate-button" onclick="openimage()">
+        </div>
+        <br>
+        <div class="display-image">
+            <div class="output">
+                <p id="topTextOverlay" class="text-overlay top-text"></p>
+                <img id="displayImage">
+                <p id="bottomTextOverlay" class="text-overlay bottom-text"></p>
+            </div>
+        </div>
+    </div>
+    <div class="save-image" id="saveImage">
+        <input type="button" value="Download" class="download-button" onclick="download()">
+    </div>
+</body>
+
+</html>
